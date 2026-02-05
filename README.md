@@ -114,5 +114,7 @@ Ex:
 ## Configuration
 A `CONFIG.json` file is created on the first run. Within the menu or by editing the file directly you can change:
 **Keybinds:**  Remap controls to match your in-game settings.
+
 **Execute Delay:** Modify the start time (Default: 7)
+
 **ASCII Art:** Toggle the ASCII art on/off.
