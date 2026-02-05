@@ -1,0 +1,20 @@
+# Python compile files
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+
+# User Configuration
+CONFIG.json
+
+# Virtual Environments
+venv/
+env/
+
+# IDE Settings
+.vscode/
+.idea/
+
+# Ignore my personal scripts
+scripts/*.txt
