@@ -157,13 +157,19 @@ def set_ascii_art():
         save_config()
     sleep_ks(1.5)
 
-try:
-    with open("log.log", "r") as f:
-        log_contents = (f.read())
-        number_of_previous_runs = log_contents.count("Application started")
-        run_count = number_of_previous_runs + 1
-except FileNotFoundError:
-    pass
+
+def load_run_count():
+    try:
+        with open("state.json", "r") as f:
+            state = json.load(f)
+            return int(state.get("run_count", 0)) + 1
+    except (FileNotFoundError, json.JSONDecodeError, ValueError):
+        return 1
+
+run_count = load_run_count()
+
+with open("state.json", "w") as f:
+    json.dump({"run_count": run_count}, f)
 
 # Logging
 logging.basicConfig(filename="log.log", level=logging.INFO,
